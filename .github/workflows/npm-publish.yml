@@ -45,6 +45,7 @@ jobs:
         with:
           node-version: 14
           registry-url: https://npm.pkg.github.com/
+      - run: cd v1
       - run: npm ci
       - run: npm publish
         env:
