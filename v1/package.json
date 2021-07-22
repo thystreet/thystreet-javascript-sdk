@@ -1,6 +1,6 @@
 {
   "name": "@thystreet/sdk",
-  "version": "0.0.2-alpha.1",
+  "version": "0.0.1",
   "description": "Thy Street APIs are completely RESTful and all our responses are returned in JSON.",
   "license": "Unlicense",
   "main": "dist/index.js",
