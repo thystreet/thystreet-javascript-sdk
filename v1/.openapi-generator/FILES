@@ -1,6 +1,5 @@
 .babelrc
 .gitignore
-.openapi-generator-ignore
 .travis.yml
 README.md
 docs/DeviceApi.md
@@ -18,8 +17,3 @@ src/index.js
 src/model/DeviceStatusDto.js
 src/model/DeviceTokenDto.js
 src/model/OrderStatusDto.js
-test/api/DeviceApi.spec.js
-test/api/OrderApi.spec.js
-test/model/DeviceStatusDto.spec.js
-test/model/DeviceTokenDto.spec.js
-test/model/OrderStatusDto.spec.js
