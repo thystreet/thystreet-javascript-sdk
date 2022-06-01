@@ -5,7 +5,7 @@ All URIs are relative to *https://cheffy-api.thystreet.com/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getOrderById**](OrderApi.md#getOrderById) | **GET** /order/params/{orderToken} | 
-[**setStatus**](OrderApi.md#setStatus) | **PUT** /order/status | 
+[**setStatus**](OrderApi.md#setStatus) | **PUT** /order/status/{orderToken} | 
 
 
 
@@ -26,7 +26,7 @@ thystreetAuth.username = 'YOUR USERNAME';
 thystreetAuth.password = 'YOUR PASSWORD';
 
 let apiInstance = new ThyStreet.OrderApi();
-let orderToken = "orderToken_example"; // String | This is the id recieved from the qrcode
+let orderToken = thystreet-FucAdwCipV6nLlVsesnu; // String | This is the id recieved from the qrcode or on your webhook
 apiInstance.getOrderById(orderToken).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -40,7 +40,7 @@ apiInstance.getOrderById(orderToken).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderToken** | **String**| This is the id recieved from the qrcode | 
+ **orderToken** | **String**| This is the id recieved from the qrcode or on your webhook | 
 
 ### Return type
 
@@ -58,7 +58,7 @@ null (empty response body)
 
 ## setStatus
 
-> setStatus(orderStatusDto)
+> setStatus(orderToken, orderStatusDto)
 
 
 
@@ -73,8 +73,9 @@ thystreetAuth.username = 'YOUR USERNAME';
 thystreetAuth.password = 'YOUR PASSWORD';
 
 let apiInstance = new ThyStreet.OrderApi();
+let orderToken = thystreet-FucAdwCipV6nLlVsesnu; // String | This is the id recieved from the qrcode or on your webhook
 let orderStatusDto = new ThyStreet.OrderStatusDto(); // OrderStatusDto | 
-apiInstance.setStatus(orderStatusDto).then(() => {
+apiInstance.setStatus(orderToken, orderStatusDto).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -87,6 +88,7 @@ apiInstance.setStatus(orderStatusDto).then(() => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **orderToken** | **String**| This is the id recieved from the qrcode or on your webhook | 
  **orderStatusDto** | [**OrderStatusDto**](OrderStatusDto.md)|  | 
 
 ### Return type

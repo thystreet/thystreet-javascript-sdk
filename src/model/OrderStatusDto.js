@@ -22,12 +22,11 @@ class OrderStatusDto {
     /**
      * Constructs a new <code>OrderStatusDto</code>.
      * @alias module:model/OrderStatusDto
-     * @param orderId {String} Order ID
      * @param status {module:model/OrderStatusDto.StatusEnum} Set order status
      */
-    constructor(orderId, status) { 
+    constructor(status) { 
         
-        OrderStatusDto.initialize(this, orderId, status);
+        OrderStatusDto.initialize(this, status);
     }
 
     /**
@@ -35,8 +34,7 @@ class OrderStatusDto {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, orderId, status) { 
-        obj['orderId'] = orderId;
+    static initialize(obj, status) { 
         obj['status'] = status;
     }
 
@@ -51,9 +49,6 @@ class OrderStatusDto {
         if (data) {
             obj = obj || new OrderStatusDto();
 
-            if (data.hasOwnProperty('orderId')) {
-                obj['orderId'] = ApiClient.convertToType(data['orderId'], 'String');
-            }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
@@ -63,12 +58,6 @@ class OrderStatusDto {
 
 
 }
-
-/**
- * Order ID
- * @member {String} orderId
- */
-OrderStatusDto.prototype['orderId'] = undefined;
 
 /**
  * Set order status
@@ -92,6 +81,12 @@ OrderStatusDto['StatusEnum'] = {
      * @const
      */
     "CONFIRMED": "CONFIRMED",
+
+    /**
+     * value: "PENDING"
+     * @const
+     */
+    "PENDING": "PENDING",
 
     /**
      * value: "COMPLETED"

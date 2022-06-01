@@ -36,7 +36,7 @@ export default class OrderApi {
 
 
     /**
-     * @param {String} orderToken This is the id recieved from the qrcode
+     * @param {String} orderToken This is the id recieved from the qrcode or on your webhook
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     getOrderByIdWithHttpInfo(orderToken) {
@@ -68,7 +68,7 @@ export default class OrderApi {
     }
 
     /**
-     * @param {String} orderToken This is the id recieved from the qrcode
+     * @param {String} orderToken This is the id recieved from the qrcode or on your webhook
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     getOrderById(orderToken) {
@@ -80,17 +80,23 @@ export default class OrderApi {
 
 
     /**
+     * @param {String} orderToken This is the id recieved from the qrcode or on your webhook
      * @param {module:model/OrderStatusDto} orderStatusDto 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    setStatusWithHttpInfo(orderStatusDto) {
+    setStatusWithHttpInfo(orderToken, orderStatusDto) {
       let postBody = orderStatusDto;
+      // verify the required parameter 'orderToken' is set
+      if (orderToken === undefined || orderToken === null) {
+        throw new Error("Missing the required parameter 'orderToken' when calling setStatus");
+      }
       // verify the required parameter 'orderStatusDto' is set
       if (orderStatusDto === undefined || orderStatusDto === null) {
         throw new Error("Missing the required parameter 'orderStatusDto' when calling setStatus");
       }
 
       let pathParams = {
+        'orderToken': orderToken
       };
       let queryParams = {
       };
@@ -104,18 +110,19 @@ export default class OrderApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/order/status', 'PUT',
+        '/order/status/{orderToken}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
+     * @param {String} orderToken This is the id recieved from the qrcode or on your webhook
      * @param {module:model/OrderStatusDto} orderStatusDto 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    setStatus(orderStatusDto) {
-      return this.setStatusWithHttpInfo(orderStatusDto)
+    setStatus(orderToken, orderStatusDto) {
+      return this.setStatusWithHttpInfo(orderToken, orderStatusDto)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
