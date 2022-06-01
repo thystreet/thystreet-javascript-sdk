@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**orderId** | **String** | Order ID | 
 **status** | **String** | Set order status | 
 
 
@@ -13,6 +12,8 @@ Name | Type | Description | Notes
 
 
 * `CONFIRMED` (value: `"CONFIRMED"`)
+
+* `PENDING` (value: `"PENDING"`)
 
 * `COMPLETED` (value: `"COMPLETED"`)
 

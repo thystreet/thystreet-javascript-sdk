@@ -125,10 +125,10 @@ All URIs are relative to *https://cheffy-api.thystreet.com/api/v1*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ThyStreet.DeviceApi* | [**generateToken**](docs/DeviceApi.md#generateToken) | **GET** /device/generate/{deviceId} | 
-*ThyStreet.DeviceApi* | [**setDetails**](docs/DeviceApi.md#setDetails) | **PUT** /device/details | 
+*ThyStreet.DeviceApi* | [**setDetails**](docs/DeviceApi.md#setDetails) | **PUT** /device/details | Toggle your device tariff when your device goes online using this api.
 *ThyStreet.DeviceApi* | [**setToken**](docs/DeviceApi.md#setToken) | **PUT** /device/token | 
 *ThyStreet.OrderApi* | [**getOrderById**](docs/OrderApi.md#getOrderById) | **GET** /order/params/{orderToken} | 
-*ThyStreet.OrderApi* | [**setStatus**](docs/OrderApi.md#setStatus) | **PUT** /order/status | 
+*ThyStreet.OrderApi* | [**setStatus**](docs/OrderApi.md#setStatus) | **PUT** /order/status/{orderToken} | 
 
 
 ## Documentation for Models

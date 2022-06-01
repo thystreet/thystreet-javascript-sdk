@@ -81,6 +81,7 @@ export default class DeviceApi {
 
 
     /**
+     * Toggle your device tariff when your device goes online using this api.
      * @param {module:model/SetDeviceDetailsDto} setDeviceDetailsDto 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -112,6 +113,7 @@ export default class DeviceApi {
     }
 
     /**
+     * Toggle your device tariff when your device goes online using this api.
      * @param {module:model/SetDeviceDetailsDto} setDeviceDetailsDto 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
